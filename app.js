@@ -6,10 +6,14 @@ let kelvin = document.querySelector("#kelvin");
 
 function kelvinHandler() {
 
- 
+    if (celcius.value == "" && fahrenheit.value == "") {
+        kelvin.value = null;
+    } else {
         kelvin.value = Number(celcius.value) + 273.15;
         kelvin.innerText = kelvin.value;
-    
+
+    }
+
 
 }
 
@@ -17,7 +21,7 @@ function celciusToFahrenheitConverter() {
 
     if (celcius.value == "") {
         fahrenheit.value = null;
-      
+
 
     } else {
         fahrenheit.value = (9 / 5 * Number(celcius.value)) + 32;
@@ -30,25 +34,28 @@ function celciusToFahrenheitConverter() {
 
 function fahrenheitToCelciusConverter() {
 
-if(fahrenheit.value == ""){
-     celcius.value = null;
-}
-  else 
-  {
-    celcius.value = (Number(fahrenheit.value) - 32) * 5 / 9;
-    celcius.innerText = celcius.value;
-  }
-      
-    
+    if (fahrenheit.value == "") {
+        celcius.value = null;
+    } else {
+        celcius.value = (Number(fahrenheit.value) - 32) * 5 / 9;
+        celcius.innerText = celcius.value;
+    }
+
+
 
 
 }
 
 function kelvinToCelciusConverter() {
 
+    if (kelvin.value == "") {
+        celcius.value = null;
+    } else {
+
         celcius.value = Number(kelvin.value) - 273.15;
         celcius.innerText = celcius.value;
-    
+    }
+
 
 }
 
